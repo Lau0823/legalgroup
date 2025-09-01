@@ -15,5 +15,12 @@ export const palette = {
   },
   body: {
     main: '#FAF5EF'
+  },
+
+  contact: {
+    label: '#5E4740'
+  },
+  contact1: {
+    placeholder: '#A3A3A3'
   }
 };

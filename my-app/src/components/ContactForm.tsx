@@ -85,11 +85,29 @@ export default function ContactUs() {
                     variant="outlined"
                     
                     fullWidth
-                    sx={{
-                      "& .MuiInputLabel-root": {
-                        fontSize: "1rem", // Aumenta el tamaño de la fuente del label
-                      },
-                    }}
+                   sx={{
+  
+  "& .MuiInputLabel-root": {
+    fontSize: "1rem", 
+    color: "#5E4740", 
+  },
+  
+  "& .MuiInputBase-input": {
+    color: "#5E4740",
+  },
+
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "white", 
+    },
+    "&:hover fieldset": {
+      borderColor: "white", 
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white", 
+    },
+  },
+}}
                   />
                 </Grid>
                 <Grid size={6}>
@@ -98,11 +116,29 @@ export default function ContactUs() {
                     placeholder="e.g. Doe"
                     variant="outlined"
                     fullWidth
-                    sx={{
-                      "& .MuiInputLabel-root": {
-                        fontSize: "1rem", // Aumenta el tamaño de la fuente del label
-                      },
-                    }}
+                                sx={{
+  
+  "& .MuiInputLabel-root": {
+    fontSize: "1rem", 
+    color: "label.contact", 
+  },
+  
+  "& .MuiInputBase-input": {
+    color: "placeholder.contact1",
+  },
+
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "white", 
+    },
+    "&:hover fieldset": {
+      borderColor: "white", 
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white", 
+    },
+  },
+}}
                   />
                 </Grid>
               </Grid>
@@ -112,15 +148,54 @@ export default function ContactUs() {
                 placeholder="e.g. john.doe@example.com"
                 type="email"
                 variant="outlined"
-                fullWidth
-                sx={{ mt: 2 }}
+                sx={{
+  mt: 2,
+  "& .MuiInputLabel-root": {
+    fontSize: "1rem",
+    color: "label.contact",
+  },
+  "& .MuiInputBase-input": {
+    color: "placeholder.contact1",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "white",
+    },
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+  },
+}}
               />
               <TextField
                 label="Company"
                 placeholder="e.g. Company XYZ"
                 variant="outlined"
                 fullWidth
-                sx={{ mt: 2 }}
+            sx={{
+  mt: 2,
+  "& .MuiInputLabel-root": {
+    fontSize: "1rem",
+    color: "label.contact",
+  },
+  "& .MuiInputBase-input": {
+    color: "placeholder.contact1",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "white",
+    },
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+  },
+}}
               />
               <TextField
                 label="Additional Message"
@@ -129,7 +204,27 @@ export default function ContactUs() {
                 rows={5}
                 variant="outlined"
                 fullWidth
-                sx={{ mt: 2 }}
+                sx={{
+  mt: 2,
+  "& .MuiInputLabel-root": {
+    fontSize: "1rem",
+    color: "label.contact",
+  },
+  "& .MuiInputBase-input": {
+    color: "placeholder.contact1",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "white",
+    },
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+  },
+}}
                 inputProps={{ maxLength: 300 }}
               />
 
