@@ -1,3 +1,4 @@
+// Código optimizado para el componente ContactUs
 "use client";
 
 import {
@@ -5,6 +6,7 @@ import {
   Button,
   Card,
   CardContent,
+  Grid,
   TextField,
   Typography,
   Toolbar,
@@ -12,85 +14,110 @@ import {
 
 export default function ContactUs() {
   return (
-    <Box component="main" sx={{ backgroundColor: "#f5f2eb", minHeight: "100vh" }}>
-      {/* Este Toolbar empuja el contenido hacia abajo para despegarlo del header */}
+    <Box
+      component="main"
+      sx={{
+        backgroundColor: "#f5f2eb",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Toolbar />
 
-      <Box display="flex" justifyContent="center" alignItems="center" py={6}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flexGrow={1}
+        py={{ xs: 2, md: 6 }}
+      >
         <Card
           sx={{
-            maxWidth: 600,
+            maxWidth: 800,
             width: "100%",
             borderRadius: 3,
             boxShadow: 3,
+            p: 2,
           }}
         >
-          <CardContent>
+          <CardContent sx={{ p: { xs: 2, md: 4 } }}>
             <Typography
-              variant="overline"
+              variant="overline" // Esta variante ya tiene el estilo de "Inter"
               textAlign="center"
               display="block"
+              sx={{ color: "#d1a27e", fontSize: "0.875rem" }}
               gutterBottom
             >
               A WORLDWIDE NETWORK
             </Typography>
 
             <Typography
-              variant="h4"
+              variant="h4" // Esta variante ahora tiene el estilo de "Inter"
               component="h2"
               textAlign="center"
-              fontFamily='"Playfair Display", serif'
               fontWeight={700}
               gutterBottom
+              sx={{ color: "#321d00" }}
             >
               Contact us
             </Typography>
 
             <Typography
-              variant="body1"
+              variant="body1" // Esta variante ahora tiene el estilo de "Inter"
               textAlign="center"
               color="text.secondary"
               mb={4}
-              fontFamily='"Open Sans", sans-serif'
+              sx={{ color: "#54463a" }}
             >
               Fill out form to get in touch with us
             </Typography>
 
             <Box component="form" noValidate autoComplete="off">
-              <TextField
-                label="First Name"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-              />
-              <TextField
-                label="Last Name"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-              />
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="First Name"
+                    variant="outlined"
+                    fullWidth
+                    margin="normal"
+                    size="small"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="Last Name"
+                    variant="outlined"
+                    fullWidth
+                    margin="normal"
+                    size="small"
+                  />
+                </Grid>
+              </Grid>
+
               <TextField
                 label="Email address"
                 type="email"
                 variant="outlined"
                 fullWidth
                 margin="normal"
+                size="small"
               />
               <TextField
                 label="Company (if any)"
                 variant="outlined"
                 fullWidth
                 margin="normal"
+                size="small"
               />
               <TextField
                 label="Additional Message"
                 multiline
-                rows={4}
+                rows={5}
                 variant="outlined"
                 fullWidth
                 margin="normal"
                 inputProps={{ maxLength: 300 }}
-                helperText="0/300"
               />
 
               <Box mt={2}>
@@ -101,7 +128,6 @@ export default function ContactUs() {
                   sx={{
                     backgroundColor: "#000",
                     color: "#fff",
-                    fontFamily: '"Open Sans", sans-serif',
                     textTransform: "none",
                     px: 3,
                     py: 1.5,
@@ -119,12 +145,11 @@ export default function ContactUs() {
             </Box>
 
             <Typography
-              variant="caption"
+              variant="caption" // Esta variante ahora tiene el estilo de "Inter"
               color="text.secondary"
               display="block"
               mt={3}
               textAlign="center"
-              fontFamily='"Open Sans", sans-serif'
             >
               By pressing the contact button, I agree to Hussaini Legal Group
               contacting me by email and/or phone. I also understand that any

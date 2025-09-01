@@ -4,9 +4,9 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
-import { heroTextContent } from '@/app/components/Mock/heroContent.mock';
-import { strategyContent } from '@/app/components/Mock/strategyContent.mock';
-import { VisionaryHeroProps } from '@/app/types/visionary.types';
+import { heroTextContent } from '@/components/Mock/heroContent.mock';
+import { strategyContent } from '@/components/Mock/strategyContent.mock';
+import { VisionaryHeroProps } from '@/types/visionary.types';
 import ButtonCustom from '../ui/ButtonCustom';
 
 const VisionaryHero: React.FC<VisionaryHeroProps> = ({ imageUrl, imageAlt }) => {

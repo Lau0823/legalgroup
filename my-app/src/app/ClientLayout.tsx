@@ -3,7 +3,7 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from "@/app/theme"; // Ahora importa desde index.tsnpm t
+import theme from "@/theme"; // Ahora importa desde index.tsnpm t
 
 interface ClientProviderProps {
   children: React.ReactNode;

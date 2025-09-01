@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { footerMock } from '../components/Mock/footer.mock';
+import { footerMock } from './Mock/footer.mock';
 import React from 'react';
 
 const Footer: React.FC = () => {

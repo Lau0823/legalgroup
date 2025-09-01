@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import { Inter, Merriweather, Exo } from "next/font/google";
 import "./globals.css";
 import { Box } from '@mui/material'; // ← Cambiar Container por Box
-import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import ClientLayout from "./ClientLayout";
+
+import { Playfair_Display } from 'next/font/google';
+
+export const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
 
 const inter = Inter({
   variable: "--font-inter",

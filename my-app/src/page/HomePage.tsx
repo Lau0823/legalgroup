@@ -1,6 +1,6 @@
 // HomePage.tsx
-import HeroSection from '@/app/components/home/HeroSection'
-import VisionaryHero from '@/app/components/home/VisionaryHero'
+import HeroSection from '@/components/home/HeroSection'
+import VisionaryHero from '@/components/home/VisionaryHero'
 import visionaryHeroImg from '@/app/assets/VisionaryHero.jpg'
 import { Box } from '@mui/material'
 import React from 'react'

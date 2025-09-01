@@ -1,8 +1,8 @@
 // theme/index.ts
 import { createTheme } from '@mui/material/styles';
-import { typography } from '@/app/theme/typography';
+import  typography  from '@/theme/typography';
 import { components } from './components';
-import { palette } from '@/app/theme/palette';
+import { palette } from '@/theme/palette';
 
 const theme = createTheme({
   cssVariables: {

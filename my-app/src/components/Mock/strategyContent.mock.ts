@@ -1,6 +1,6 @@
 // mock/strategyContent.mock.ts
 
-import { BottomContentItem } from "@/app/types/button.types";
+import { BottomContentItem } from "@/types/button.types";
 
 export const strategyContent: BottomContentItem[] = [
   {
