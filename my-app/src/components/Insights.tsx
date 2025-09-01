@@ -14,7 +14,7 @@ import {
   ThemeProvider,
   Container,
 } from '@mui/material';
-import { articlesData, featuredInsightsData, publicationsData } from './Mock/insights.mock';
+import { articlesData, featuredInsightsData, publicationsData } from '../Mock/insights.mock';
 import theme from '@/theme';
 
 
