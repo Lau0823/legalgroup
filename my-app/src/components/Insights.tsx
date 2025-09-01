@@ -29,17 +29,19 @@ interface ArticleCardProps {
 
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ date, title, description }) => (
-  <Card
-    sx={{
-      height: '100%',
+  <Card sx={{ 
+    
+    height: '100%'
+      ,
       display: 'flex',
       flexDirection: 'column',
       borderRadius: '2px',
       boxShadow: 'none',
       border: '1px solid #e0e0e0', 
-    }}
+   }}
+    
   >
-    <CardContent>
+    <CardContent  >
       <Typography variant="body2" sx={{ color: 'tertiary.main', mb: 1, textTransform: 'uppercase' }}>
         {date}
       </Typography>
@@ -61,13 +63,13 @@ export default function Insights() {
       <Box sx={{
             bgcolor: 'header.main',
             color: 'white',
-            p: { xs: 20, md:20},
+            p: { xs: 30, md:30},
            
             
           }}>
   </Box>
       <Box sx={{ bgcolor: 'primary.main', py: { xs: 8, md: 10 } }}>
-        <Container maxWidth="lg">
+        <Container sx={{ minWidth: 1700 }}>
           {/* Sección principal de Insights destacados con dos columnas */}
           <Box sx={{
             bgcolor: 'primary.main',
