@@ -1,5 +1,6 @@
-import Isights from '@/components/Isigths';
+import Isigths from '@/components/Isigths';
+
 
 export default function Page() {
-  return <Isights />;
+  return <Isigths />;
 }

@@ -1,8 +1,7 @@
 // theme/index.ts
 import { createTheme } from '@mui/material/styles';
-import  typography  from '@/theme/typography';
-import { components } from './components';
-import { palette } from '@/theme/palette';
+import { typography } from './typography';
+import { palette } from './palette';
 
 const theme = createTheme({
   cssVariables: {
@@ -10,7 +9,6 @@ const theme = createTheme({
   },
   palette,
   typography,
-  components,
 });
 
 export default theme;

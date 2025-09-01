@@ -1,4 +1,4 @@
-import HomePage from '../app/page/HomePage'
+import HomePage from '../page/HomePage'
 import { Box } from '@mui/material'
 import React from 'react'
 

@@ -1,4 +1,4 @@
-// Código optimizado para el componente ContactUs
+// components/ContactUs.tsx
 "use client";
 
 import {
@@ -31,131 +31,145 @@ export default function ContactUs() {
         alignItems="center"
         flexGrow={1}
         py={{ xs: 2, md: 6 }}
+        px={{ xs: 2, md: 8 }}
       >
         <Card
           sx={{
-            maxWidth: 800,
+            maxWidth: 1600, // Aumentado para un formulario más ancho
             width: "100%",
             borderRadius: 3,
             boxShadow: 3,
-            p: 2,
           }}
         >
-          <CardContent sx={{ p: { xs: 2, md: 4 } }}>
+          <CardContent sx={{ p: { xs: 3, md: 5 } }}>
             <Typography
-              variant="overline" // Esta variante ya tiene el estilo de "Inter"
+              variant="overline"
               textAlign="center"
               display="block"
-              sx={{ color: "#d1a27e", fontSize: "0.875rem" }}
-              gutterBottom
+              sx={{ color: '#070300ff' }}
+              mb={1}
             >
               A WORLDWIDE NETWORK
             </Typography>
 
             <Typography
-              variant="h4" // Esta variante ahora tiene el estilo de "Inter"
-              component="h2"
+              variant="h4"
+              component="h1"
               textAlign="center"
               fontWeight={700}
-              gutterBottom
-              sx={{ color: "#321d00" }}
+              sx={{ color: '#0e0801ff' }}
+              mb={1}
             >
               Contact us
             </Typography>
 
             <Typography
-              variant="body1" // Esta variante ahora tiene el estilo de "Inter"
+              variant="body1"
               textAlign="center"
               color="text.secondary"
+              sx={{ color: '#030200ff' }}
               mb={4}
-              sx={{ color: "#54463a" }}
             >
               Fill out form to get in touch with us
             </Typography>
 
-            <Box component="form" noValidate autoComplete="off">
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+      
+
+            <Box component="form"  noValidate autoComplete="off">
+              <Grid container spacing={2} >
+                <Grid size={6}   > 
                   <TextField
                     label="First Name"
+                    placeholder="e.g. John"
                     variant="outlined"
                     fullWidth
-                    margin="normal"
-                    size="small"
+                    sx={{
+                      "& .MuiInputLabel-root": {
+                        fontSize: "1rem", // Aumenta el tamaño de la fuente del label
+                      },
+                    }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={6}>
                   <TextField
                     label="Last Name"
+                    placeholder="e.g. Doe"
                     variant="outlined"
                     fullWidth
-                    margin="normal"
-                    size="small"
+                    sx={{
+                      "& .MuiInputLabel-root": {
+                        fontSize: "1rem", // Aumenta el tamaño de la fuente del label
+                      },
+                    }}
                   />
                 </Grid>
               </Grid>
 
               <TextField
                 label="Email address"
+                placeholder="e.g. john.doe@example.com"
                 type="email"
                 variant="outlined"
                 fullWidth
-                margin="normal"
-                size="small"
+                sx={{ mt: 2 }}
               />
               <TextField
-                label="Company (if any)"
+                label="Company"
+                placeholder="e.g. Company XYZ"
                 variant="outlined"
                 fullWidth
-                margin="normal"
-                size="small"
+                sx={{ mt: 2 }}
               />
               <TextField
                 label="Additional Message"
+                placeholder="Example Text"
                 multiline
                 rows={5}
                 variant="outlined"
                 fullWidth
-                margin="normal"
+                sx={{ mt: 2 }}
                 inputProps={{ maxLength: 300 }}
               />
 
-              <Box mt={2}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  sx={{
-                    backgroundColor: "#000",
-                    color: "#fff",
-                    textTransform: "none",
-                    px: 3,
-                    py: 1.5,
-                    fontSize: "1rem",
-                    borderRadius: 1,
-                    "&:hover": {
-                      backgroundColor: "#333",
-                    },
-                  }}
-                  fullWidth
-                >
-                  Submit the message
-                </Button>
-              </Box>
-            </Box>
+              <Grid container spacing={2} alignItems="center" sx={{ mt: 4 }}>
+                <Grid size={2}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    sx={{
+                      textTransform: "none",
+                      fontSize: "1rem",
+                      borderRadius: 1,
+                      py: 1.5,
+                      backgroundColor: "#000",
+                      color: "#fff",
+                      "&:hover": {
+                        backgroundColor: "#333",
+                      },
+                      width: '100%',
+                    }}
+                  >
+                    Submit the message
+                  </Button>
+                </Grid>
 
-            <Typography
-              variant="caption" // Esta variante ahora tiene el estilo de "Inter"
-              color="text.secondary"
-              display="block"
-              mt={3}
-              textAlign="center"
-            >
-              By pressing the contact button, I agree to Hussaini Legal Group
-              contacting me by email and/or phone. I also understand that any
-              information I’ve shared in this form is subject to Hussaini Legal
-              Group Privacy Policy.
-            </Typography>
+                <Grid size={10}>
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    display="block"
+                    textAlign={{ xs: 'center', md: 'left' }}
+                    sx={{ lineHeight: 1.4 }}
+                  >
+                    By pressing the contact button, I agree to Hussaini Legal Group
+                    contacting me by email and/or phone. I also understand that any
+                    information I’ve shared in this form is subject to Hussaini Legal
+                    Group Privacy Policy.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Box>
           </CardContent>
         </Card>
       </Box>

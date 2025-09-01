@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import {
   Card,
   CardContent,
@@ -9,115 +10,24 @@ import {
   Grid,
   Box,
   Button,
-  createTheme,
+  
   ThemeProvider,
   Container,
 } from '@mui/material';
+import { articlesData, featuredInsightsData, publicationsData } from './Mock/insights.mock';
+import theme from '@/theme';
 
-// Definir un tema de MUI para los colores y tipografía
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#8b1e2e', // Rojo oscuro
-    },
-    secondary: {
-      main: '#f4f2ef', // Beige
-    },
-    text: {
-      primary: '#333333',
-      secondary: '#6c6b69',
-    },
-  },
-  typography: {
-    fontFamily: 'Arial, sans-serif',
-    h3: {
-      fontWeight: 600,
-      fontSize: '2.5rem',
-    },
-    h4: {
-      fontWeight: 600,
-      fontSize: '1.75rem',
-    },
-    h6: {
-      fontWeight: 'bold',
-      fontSize: '1.1rem',
-      lineHeight: 1.4,
-    },
-    body1: {
-      fontWeight: 400,
-    },
-    body2: {
-      fontWeight: 400,
-    },
-  },
-});
 
-// Datos de ejemplo para las secciones
-const featuredInsightsData = [
-  {
-    image: 'https://cdn.prod.website-files.com/67067a908482471659ad6f88/6710e9491d381b33c8f6aa4e_clarisse-meyer-jKU2NneZAbI-unsplash%20(1)-p-800.jpg',
-    title:
-      'In a high-stakes business litigation case, our legal team secured a multi-million-dollar settlement.',
-    date: 'Jun 28, 2023',
-  },
-  {
-    image: 'https://cdn.prod.website-files.com/67067a908482471659ad6f88/6710e93c5863eef512e4f06e_rick-rothenberg-PoWdDkNTxuw-unsplash%20(1)-p-800.jpg',
-    title:
-      'We helped a client navigate a divorce, achieving a fair division of assets.',
-    date: 'Jun 28, 2023',
-  },
-];
 
-const articlesData = [
-  {
-    date: 'Jun 28, 2023',
-    title: 'Resolving to a complete dismissal of the case',
-    description:
-      'Lorem ipsum dolor sit amet consectetur in a pellentesque sit risus tristique et nulla sit a',
-  },
-  {
-    date: 'Jul 15, 2023',
-    title: 'Resolving to a complete dismissal of the case',
-    description:
-      'Lorem ipsum dolor sit amet consectetur in a pellentesque sit risus tristique et nulla sit a',
-  },
-  {
-    date: 'Sep 3, 2023',
-    title: 'Resolving to a complete dismissal of the case',
-    description:
-      'Lorem ipsum dolor sit amet consectetur in a pellentesque sit risus tristique et nulla sit a',
-  },
-];
 
-const publicationsData = [
-  {
-    date: 'Nov 14, 2023',
-    title: 'Resolving to a complete dismissal of the case',
-    description:
-      'Lorem ipsum dolor sit amet consectetur in a pellentesque sit risus tristique et nulla sit a',
-  },
-  {
-    date: 'Dec 1, 2023',
-    title: 'Resolving to a complete dismissal of the case',
-    description:
-      'Lorem ipsum dolor sit amet consectetur in a pellentesque sit risus tristique et nulla sit a',
-  },
-  {
-    date: 'Jan 9, 2024',
-    title: 'Resolving to a complete dismissal of the case',
-    description:
-      'Lorem ipsum dolor sit amet consectetur in a pellentesque sit risus tristique et nulla sit a',
-  },
-];
 
-// Definir la interfaz para las props de la tarjeta
 interface ArticleCardProps {
   date: string;
   title: string;
   description: string;
 }
 
-// Sub-componente para las tarjetas de artículo
+
 const ArticleCard: React.FC<ArticleCardProps> = ({ date, title, description }) => (
   <Card
     sx={{
@@ -126,17 +36,17 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ date, title, description }) =
       flexDirection: 'column',
       borderRadius: '2px',
       boxShadow: 'none',
-      border: '1px solid #e0e0e0', // Borde sutil
+      border: '1px solid #e0e0e0', 
     }}
   >
     <CardContent>
-      <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1, textTransform: 'uppercase' }}>
+      <Typography variant="body2" sx={{ color: 'tertiary.main', mb: 1, textTransform: 'uppercase' }}>
         {date}
       </Typography>
-      <Typography variant="h6" sx={{ color: 'primary.main', mb: 1 }}>
+      <Typography variant="h6" sx={{ color: 'tertiary.main', mb: 1 }}>
         {title}
       </Typography>
-      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+      <Typography variant="body1" sx={{ color: 'tertiary.main' }}>
         {description}
       </Typography>
     </CardContent>
@@ -146,7 +56,52 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ date, title, description }) =
 export default function InsightsPage() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ bgcolor: 'secondary.main', py: { xs: 8, md: 10 } }}>
+
+
+      <Box sx={{
+            bgcolor: 'header.main',
+            color: 'white',
+            p: { xs: 50, md:50},
+           
+            
+          }}>
+ <Typography variant="h3" component="h1" gutterBottom>
+              Insights
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'body.main', mb: 4 }}>
+              A Slong, Events & Recent Articles
+            </Typography>
+
+   <Grid container spacing={0}>
+              {featuredInsightsData.map((item, index) => (
+                <Grid size={6}>
+                  <Box>
+                    <CardMedia
+  component="img"
+  image={item.image}
+  alt={item.title}
+  sx={{
+    width: '100%',
+    height: 350,
+    objectFit: 'cover'
+  }}
+/>
+                    <Box sx={{ pt: 2 }}>
+                      <Typography variant="body2" sx={{ color: 'header.main', mb: 1, textTransform: 'uppercase' }}>
+                        {item.date}
+                      </Typography>
+                      <Typography variant="h6" sx={{ color: 'tertiary.main' }}>
+                        {item.title}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+
+
+      <Box sx={{ bgcolor: 'primary.main', py: { xs: 8, md: 10 } }}>
         <Container maxWidth="lg">
           {/* Sección principal de Insights destacados con dos columnas */}
           <Box sx={{
@@ -155,28 +110,30 @@ export default function InsightsPage() {
             p: { xs: 4, md: 6 },
             borderRadius: '2px',
           }}>
-            <Typography variant="h3" component="h1" gutterBottom>
-              Insights
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'white', mb: 4 }}>
-              A Slong, Events & Recent Articles
-            </Typography>
-            <Grid container spacing={4}>
+
+             
+
+
+           
+            <Grid container spacing={0}>
               {featuredInsightsData.map((item, index) => (
-                <Grid item xs={12} md={6} xl={6} key={index}>
+                <Grid size={6}>
                   <Box>
                     <CardMedia
-                      component="img"
-                      height="250"
-                      image={item.image}
-                      alt={item.title}
-                      sx={{ objectFit: 'cover' }}
-                    />
+  component="img"
+  image={item.image}
+  alt={item.title}
+  sx={{
+    width: '100%',
+    height: 350,
+    objectFit: 'cover'
+  }}
+/>
                     <Box sx={{ pt: 2 }}>
-                      <Typography variant="body2" sx={{ color: 'white', mb: 1, textTransform: 'uppercase' }}>
+                      <Typography variant="body2" sx={{ color: 'header.main', mb: 1, textTransform: 'uppercase' }}>
                         {item.date}
                       </Typography>
-                      <Typography variant="h6" sx={{ color: 'white' }}>
+                      <Typography variant="h6" sx={{ color: 'tertiary.main' }}>
                         {item.title}
                       </Typography>
                     </Box>
@@ -193,7 +150,7 @@ export default function InsightsPage() {
             </Typography>
             <Grid container spacing={3}>
               {articlesData.map((article, index) => (
-                <Grid item xs={12} sm={6} md={4} xl={4} key={index}>
+                <Grid size={4}>
                   <ArticleCard {...article} />
                 </Grid>
               ))}
@@ -202,8 +159,8 @@ export default function InsightsPage() {
               <Button
                 variant="contained"
                 sx={{
-                  bgcolor: 'primary.main',
-                  '&:hover': { bgcolor: '#6a1622' },
+                  bgcolor: 'header.main',
+                  
                   color: 'white',
                   px: 4,
                   py: 1.5,
@@ -222,7 +179,7 @@ export default function InsightsPage() {
             </Typography>
             <Grid container spacing={3}>
               {publicationsData.map((article, index) => (
-                <Grid item xs={12} sm={6} md={4} xl={4} key={index}>
+                <Grid size={4}>
                   <ArticleCard {...article} />
                 </Grid>
               ))}

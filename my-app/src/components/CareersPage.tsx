@@ -3,7 +3,7 @@
 import React from 'react';
 import { Box, Typography, Container, Link, Card } from '@mui/material';
 import Image from 'next/image';
-import careersImage from '@/app/assets/career.png';
+import careersImage from '@/assets/career.png';
 
 const Careers = () => {
   return (
