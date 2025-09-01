@@ -53,7 +53,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ date, title, description }) =
   </Card>
 );
 
-export default function InsightsPage() {
+export default function Insights() {
   return (
     <ThemeProvider theme={theme}>
 
@@ -61,46 +61,11 @@ export default function InsightsPage() {
       <Box sx={{
             bgcolor: 'header.main',
             color: 'white',
-            p: { xs: 50, md:50},
+            p: { xs: 20, md:20},
            
             
           }}>
- <Typography variant="h3" component="h1" gutterBottom>
-              Insights
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'body.main', mb: 4 }}>
-              A Slong, Events & Recent Articles
-            </Typography>
-
-   <Grid container spacing={0}>
-              {featuredInsightsData.map((item, index) => (
-                <Grid size={6}>
-                  <Box>
-                    <CardMedia
-  component="img"
-  image={item.image}
-  alt={item.title}
-  sx={{
-    width: '100%',
-    height: 350,
-    objectFit: 'cover'
-  }}
-/>
-                    <Box sx={{ pt: 2 }}>
-                      <Typography variant="body2" sx={{ color: 'header.main', mb: 1, textTransform: 'uppercase' }}>
-                        {item.date}
-                      </Typography>
-                      <Typography variant="h6" sx={{ color: 'tertiary.main' }}>
-                        {item.title}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-
-
+  </Box>
       <Box sx={{ bgcolor: 'primary.main', py: { xs: 8, md: 10 } }}>
         <Container maxWidth="lg">
           {/* Sección principal de Insights destacados con dos columnas */}
@@ -110,6 +75,7 @@ export default function InsightsPage() {
             p: { xs: 4, md: 6 },
             borderRadius: '2px',
           }}>
+          
 
              
 
@@ -145,7 +111,7 @@ export default function InsightsPage() {
 
           {/* Sección de Artículos */}
           <Box sx={{ mt: { xs: 6, md: 8 } }}>
-            <Typography variant="h4" sx={{ color: 'primary.main', mb: 3 }}>
+            <Typography variant="h6" sx={{ color: 'tertiary.main', mb: 3 }}>
               Articles
             </Typography>
             <Grid container spacing={3}>
@@ -174,7 +140,7 @@ export default function InsightsPage() {
 
           {/* Sección de Publicaciones */}
           <Box sx={{ mt: { xs: 6, md: 8 } }}>
-            <Typography variant="h4" sx={{ color: 'primary.main', mb: 3 }}>
+            <Typography variant="h6" sx={{ color: 'tertiary.main', mb: 3 }}>
               Publications
             </Typography>
             <Grid container spacing={3}>
@@ -188,7 +154,7 @@ export default function InsightsPage() {
               <Button
                 variant="contained"
                 sx={{
-                  bgcolor: 'primary.main',
+                  bgcolor: 'header.main',
                   '&:hover': { bgcolor: '#6a1622' },
                   color: 'white',
                   px: 4,

@@ -1,6 +1,7 @@
-import Isigths from '@/components/Isigths';
+import Insights from '@/components/Insights';
+
 
 
 export default function Page() {
-  return <Isigths />;
+  return <Insights />;
 }
