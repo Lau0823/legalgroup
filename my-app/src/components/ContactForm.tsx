@@ -53,7 +53,7 @@ export default function ContactUs() {
             </Typography>
 
             <Typography
-              variant="h4"
+              variant="h6"
               component="h1"
               textAlign="center"
               fontWeight={700}
@@ -76,12 +76,14 @@ export default function ContactUs() {
       
 
             <Box component="form"  noValidate autoComplete="off">
-              <Grid container spacing={2} >
+              <Grid container spacing={2}
+               >
                 <Grid size={6}   > 
                   <TextField
                     label="First Name"
                     placeholder="e.g. John"
                     variant="outlined"
+                    
                     fullWidth
                     sx={{
                       "& .MuiInputLabel-root": {

@@ -4,8 +4,8 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
-import { heroTextContent } from '@/Mock/heroContent.mock';
-import { strategyContent } from '@/Mock/strategyContent.mock';
+import { heroTextContent } from '@/mock/heroContent.mock';
+import { strategyContent } from '@/mock/strategyContent.mock';
 import { VisionaryHeroProps } from '@/types/visionary.types';
 import ButtonCustom from '../ui/ButtonCustom';
 
