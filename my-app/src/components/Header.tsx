@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { navigationMock } from '../mock/navigation.mock';
+import { navigationMock } from '../Mock/navigation.mock';
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
